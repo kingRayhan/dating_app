@@ -1,6 +1,5 @@
 import 'package:dating_app/consts.dart';
-import 'package:dating_app/tab-screens/feed_screen/feed_screen.dart';
-import 'package:dating_app/tab-screens/tab_root_screen/tab_root_screen.dart';
+import 'package:dating_app/screens/tab_root_screen/tab_root_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

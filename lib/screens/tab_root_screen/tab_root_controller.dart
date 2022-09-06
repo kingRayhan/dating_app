@@ -6,10 +6,10 @@ import '../inbox_screen/inbox_screen.dart';
 import '../likes_screen/likes_screen.dart';
 
 class TabRootController extends GetxController {
-  List<Widget> tabScreens = [
-    const FeedScreen(),
-    const InboxScreen(),
-    const LikesScreen(),
+  List tabScreens = [
+    {"screen": const FeedScreen(), "title": "Feed"},
+    {"screen": const InboxScreen(), "title": "Inbox"},
+    {"screen": const LikesScreen(), "title": "Likes"},
   ].obs;
 
   var tabIndex = 0.obs;

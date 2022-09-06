@@ -28,4 +28,5 @@ final kAppBarTheme = AppBarTheme(
 final kAppTheme = ThemeData(
   appBarTheme: kAppBarTheme,
   scaffoldBackgroundColor: kbodyBackgroundColor,
+  textTheme: TextTheme(headline3: kTextTheme__title_medium),
 );

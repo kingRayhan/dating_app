@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import '../../consts.dart';
+import '../../widgets/app_bar.dart';
 import 'tab_root_controller.dart';
 
 class TabRootScreen extends StatelessWidget {
@@ -12,15 +13,19 @@ class TabRootScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      appBar: _appBar(),
-      bottomNavigationBar: _bottomNav(),
-      body: SafeArea(
-        bottom: false,
-        child: Obx(
-          () =>
-              _tabRootController.tabScreens[_tabRootController.tabIndex.value],
+    return SafeArea(
+      child: Scaffold(
+        extendBody: true,
+        appBar: CustomAppBar(
+            title: _tabRootController
+                .tabScreens[_tabRootController.tabIndex.value]["title"]),
+        bottomNavigationBar: _bottomNav(),
+        body: SafeArea(
+          bottom: false,
+          child: Obx(
+            () => _tabRootController
+                .tabScreens[_tabRootController.tabIndex.value]["screen"],
+          ),
         ),
       ),
     );

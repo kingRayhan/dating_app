@@ -5,8 +5,11 @@ class InboxScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("InboxScreen"),
+    return Scaffold(
+      appBar: AppBar(title: const Text("Inbox")),
+      body: const Center(
+        child: Text("InboxScreen"),
+      ),
     );
   }
 }
