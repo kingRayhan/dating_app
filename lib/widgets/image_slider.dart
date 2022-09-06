@@ -18,26 +18,26 @@ class ImageSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider(
-      options:
-          CarouselOptions(height: 350.0, viewportFraction: 1.0, autoPlay: true),
-      items: [1, 2, 3, 4, 5].map((i) {
-        return Builder(
-          builder: (BuildContext context) {
-            return ClipRRect(
-              borderRadius: BorderRadius.circular(15.0),
-              child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                  decoration: const BoxDecoration(color: Colors.amber),
-                  child: Text(
-                    'text $i',
-                    style: const TextStyle(fontSize: 16.0),
-                  )),
-            );
-          },
-        );
-      }).toList(),
+    return CarouselSlider.builder(
+      options: CarouselOptions(
+        height: 350.0,
+        viewportFraction: 1.0,
+        autoPlay: true,
+        onPageChanged: (index, reason) {
+          print(index);
+        },
+      ),
+      itemBuilder: (BuildContext context, int index, int realIndex) =>
+          Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.0),
+          image: DecorationImage(
+            image: NetworkImage(imageUrls[index]),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+      itemCount: imageUrls.length,
     );
   }
 }
